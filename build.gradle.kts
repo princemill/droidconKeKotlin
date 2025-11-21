@@ -14,8 +14,6 @@ plugins {
     alias(libs.plugins.gms) apply false
     alias(libs.plugins.firebase.crashlytics) apply false
     alias(libs.plugins.firebase.perf) apply false
-    alias(libs.plugins.kotlin.multiplatform) apply false
-    alias(libs.plugins.android.kotlin.multiplatform.library) apply false
 }
 
 allprojects {
@@ -56,7 +54,7 @@ subprojects {
             targetExclude("${project.rootDir}/build-logic/**/*.kt")
             licenseHeaderFile(
                 rootProject.file("${project.rootDir}/spotless/copyright.kt"),
-                "^(package|object|import|interface)"
+                "^(package|object|import|interface)",
             )
         }
         format("kts") {
